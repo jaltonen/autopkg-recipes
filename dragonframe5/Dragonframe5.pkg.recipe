@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
     <key>Identifier</key>
-    <string>com.github.jwaltonen-recipes.pkg.Dragonframe5</string>
+    <string>com.github.jaltonen-recipes.pkg.Dragonframe5</string>
     <key>Description</key>
     <string>Turns the download of the latest version of Dragonframe5 into a
 package</string>
@@ -13,7 +13,7 @@ package</string>
         <string>Dragonframe 5</string>
     </dict>
     <key>ParentRecipe</key>
-    <string>com.github.jwaltonen-recipes.download.Dragonframe5</string>
+    <string>com.github.jaltonen-recipes.download.Dragonframe5</string>
     <key>Process</key>
     <array>
         <dict>

@@ -6,7 +6,7 @@
     <string>munkis dragonframe5
 </string>
     <key>Identifier</key>
-    <string>com.github.jwaltonen.munki.preform3</string>
+    <string>com.github.jaltonen.munki.preform3</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>

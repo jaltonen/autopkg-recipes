@@ -6,7 +6,7 @@
     <string>munkis dragonframe5
 </string>
     <key>Identifier</key>
-    <string>com.github.jwaltonen.munki.dragonFrame5</string>
+    <string>com.github.jaltonen.munki.dragonFrame5</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
@@ -36,7 +36,7 @@
     <key>MinimumVersion</key>
     <string>0.2.9</string>
     <key>ParentRecipe</key>
-    <string>com.github.jwaltonen-recipes.pkg.Dragonframe5</string>
+    <string>com.github.jaltonen-recipes.pkg.Dragonframe5</string>
     <key>Process</key>
     <array>
     
