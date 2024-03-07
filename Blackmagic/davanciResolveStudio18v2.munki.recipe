@@ -207,7 +207,7 @@ this user's home will be used, and if run at the loginwindow, the root user's ho
         </dict>
 
 
-<!-- 
+
        <dict>
             <key>Processor</key>
             <string>MunkiOptionalReceiptEditor</string>
@@ -219,10 +219,10 @@ this user's home will be used, and if run at the loginwindow, the root user's ho
                 <string>com.blackmagic-design.ManifestFairlightAudioAccelerator</string>
             </dict>
         </dict>
--->
 
 
-<dict>
+
+	<!-- 	<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>pkg_ids_set_optional_true</key>
@@ -233,6 +233,7 @@ this user's home will be used, and if run at the loginwindow, the root user's ho
 			<key>Processor</key>
 			<string>MunkiPkginfoReceiptsEditor</string>
 		</dict>
+	-->
 
 
 
