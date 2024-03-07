@@ -214,7 +214,7 @@ this user's home will be used, and if run at the loginwindow, the root user's ho
             <key>Arguments</key>
             <dict>
                 <key>pkginfo_repo_path</key>
-                <string>apps/DaVinciResolveStudio18V2</string>
+                <string>apps/DaVinciResolveStudio18V2/DaVinciResolveStudio18-18.6.5.plist</string>
 		<key>pkg_ids_set_optional_true</key>
                 <string>com.blackmagic-design.ManifestFairlightAudioAccelerator</string>
             </dict>
