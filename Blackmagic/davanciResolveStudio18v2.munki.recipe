@@ -199,8 +199,8 @@ this user's home will be used, and if run at the loginwindow, the root user's ho
                 <string>%found_filename%</string>
                 <key>repo_subdirectory</key>
                 <string>%MUNKI_REPO_SUBDIR%</string>
-                <key>force_munkiimport</key>
-			<string>true</string>
+              <!--   <key>force_munkiimport</key>
+			<string>true</string> -->
             </dict>
             <key>Processor</key>
             <string>MunkiImporter</string>
