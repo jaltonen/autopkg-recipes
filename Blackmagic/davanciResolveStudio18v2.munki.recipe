@@ -150,7 +150,7 @@ this user's home will be used, and if run at the loginwindow, the root user's ho
 
 
 
-
+<!-- 
         <dict>
             <key>Arguments</key>
             <dict>
@@ -180,9 +180,9 @@ this user's home will be used, and if run at the loginwindow, the root user's ho
             <key>Processor</key>
             <string>MunkiPkginfoMerger</string>
         </dict>
-        
+ -->       
 
-    <dict>
+       <dict>
             <key>Processor</key>
             <string>FileFinder</string>
             <key>Arguments</key>
