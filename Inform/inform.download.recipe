@@ -19,7 +19,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>asset_regex</key>
-				<string>^.*_macOS\.dmg$</string>
+				<string>^.*_macOS_*\.dmg$</string>
 				<key>github_repo</key>
 				<string>ganelson/inform</string>
 			</dict>
