@@ -34,7 +34,7 @@
 
 
    <key>ParentRecipe</key>
-    <string>com.github.jaltonen.download.twine</string>
+    <string>com.github.jaltonen-recipes.download.twine</string>
     <key>Process</key>
     <array>
        
