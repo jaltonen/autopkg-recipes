@@ -125,7 +125,7 @@
             <key>Arguments</key>
             <dict>
                 <key>pkginfo_repo_path</key>
-                <string>%MUNKI_REPO_SUBDIR%/DaVinciResolveStudio18-18.6.5.plist</string>
+                <string>%pkginfo_repo_path%</string>
 				<key>pkg_ids_set_optional_true</key>
                 <string>com.blackmagic-design.ManifestFairlightAudioAccelerator</string>
             </dict>
