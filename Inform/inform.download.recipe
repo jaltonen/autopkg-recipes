@@ -3,15 +3,15 @@
 <plist version="1.0">
 <dict>
     <key>Identifier</key>
-    <string>com.github.jaltonen-recipes.download.twine</string>
+    <string>com.github.jaltonen-recipes.download.inform</string>
     <key>Description</key>
-    <string>Downloads the latest version of twine</string>
+    <string>Downloads the latest version of inform</string>
 
 
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
-		<string>Twine</string>
+		<string>Inform</string>
 	</dict>
 	<key>Process</key>
 	<array>
@@ -19,9 +19,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>asset_regex</key>
-				<string>^.*-macOS\.dmg$</string>
+				<string>^.*_macOS\.dmg$</string>
 				<key>github_repo</key>
-				<string>klembot/twinejs</string>
+				<string>ganelson/inform</string>
 			</dict>
 			<key>Processor</key>
 			<string>GitHubReleasesInfoProvider</string>
