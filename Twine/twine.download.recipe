@@ -13,8 +13,6 @@
 		<key>NAME</key>
 		<string>Twine</string>
 	</dict>
-	<key>MinimumVersion</key>
-	<string>2.8.1</string>
 	<key>Process</key>
 	<array>
 		<dict>
