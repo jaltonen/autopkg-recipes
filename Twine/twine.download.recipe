@@ -38,6 +38,7 @@
 	        <dict>
 			<key>Processor</key>
 			<string>EndOfCheckPhase</string>
+                </dict>
 
 </array>
 </dict>
