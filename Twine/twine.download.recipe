@@ -51,7 +51,7 @@
                 <array>
                     <dict>
                         <key>source_item</key>
-                        <string>*.app</string>
+                        <string>Twine.app</string>
                         <key>destination_path</key>
                         <string>%RECIPE_CACHE_DIR%</string>
                     </dict>
