@@ -53,7 +53,7 @@
                         <key>source_item</key>
                         <string>Twine.app</string>
                         <key>destination_path</key>
-                        <string>%RECIPE_CACHE_DIR%</string>
+                        <string>/Applications</string>
                     </dict>
                 </array>
             </dict>
