@@ -5,7 +5,7 @@
     <key>Description</key>
     <string>Downloads the latest verison of ScanSnap Home</string>
     <key>Identifier</key>
-    <string>com.github.joshua-d-miller.download.scansnaphome</string>
+    <string>com.github.jaltonen.download.scansnaphome</string>
     <key>Input</key>
 	<dict>
 		<key>NAME</key>
