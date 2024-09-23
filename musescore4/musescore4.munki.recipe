@@ -6,7 +6,7 @@
     <string>munki musescore
 </string>
     <key>Identifier</key>
-    <string>com.github.jaltonen.munki.preform3</string>
+    <string>com.github.jaltonen.munki.musescore4</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
