@@ -36,7 +36,7 @@
     <key>MinimumVersion</key>
     <string>0.2.9</string>
     <key>ParentRecipe</key>
-    <string>com.github.jaltonen-recipes.pkg.Dragonframe2024</string>
+    <string>com.github.jaltonen-recipes.download.Dragonframe2024</string>
     <key>Process</key>
     <array>
     
