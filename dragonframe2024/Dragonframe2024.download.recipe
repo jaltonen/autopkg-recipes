@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
     <key>Identifier</key>
-    <string>com.github.jaltonen-recipes.download.Dragonframe5</string>
+    <string>com.github.jaltonen-recipes.download.Dragonframe2024</string>
     <key>Description</key>
-    <string>Downloads the latest version of Dragonframe 5</string>
+    <string>Downloads the latest version of Dragonframe 2024</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
