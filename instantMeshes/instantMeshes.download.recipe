@@ -9,7 +9,7 @@
     <key>Input</key>
 	<dict>
 		<key>NAME</key>
-		<string>instantMeshes</string>
+		<string>Instant Meshes</string>
 		<key>SEARCH_URL</key>
 		<string>https://github.com/wjakob/instant-meshes?tab=readme-ov-file</string>
         <key>USER_AGENT</key>
@@ -59,7 +59,7 @@
 		<key>Arguments</key>
 		<dict>
             <key>dmg_root</key>
-            <string>%RECIPE_CACHE_DIR%/%NAME%</string>
+            <string>%RECIPE_CACHE_DIR%/Sources/%NAME%</string>
             <key>dmg_path</key>
             <string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
         </dict>
