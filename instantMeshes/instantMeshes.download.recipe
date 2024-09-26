@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Downloads the latest version of Instant Meshes</string>
+    <key>Identifier</key>
+    <string>com.github.jaltonen.download.instantMeshes</string>
+    <key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>instantMeshes</string>
+		<key>SEARCH_URL</key>
+		<string>https://github.com/wjakob/instant-meshes?tab=readme-ov-file</string>
+        <key>USER_AGENT</key>
+        <string>Mozilla/5.0 (Macintosh; Intel Mac OS X 11_0_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.193 Safari/537.36 Edg/86.0.622.68</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>2.0.0</string>
+	<key>Process</key>
+	<array>
+        <dict>
+        	<key>Processor</key>
+        	<string>URLDownloader</string>
+        	<key>Arguments</key>
+        	<dict>
+        	   <key>url</key>
+        	   <string>https://instant-meshes.s3.eu-central-1.amazonaws.com/instant-meshes-macos.zip</string>
+        	   
+        	   <key>filename</key>
+        	   <string>%NAME%.zip</string>
+        	</dict>
+        </dict>
+
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+      
+	</array>
+</dict>
+</plist>
