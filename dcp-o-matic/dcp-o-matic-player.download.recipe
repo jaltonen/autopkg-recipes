@@ -37,6 +37,31 @@
             <key>Processor</key>
             <string>URLDownloader</string>
         </dict>
+        
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>re_pattern</key>
+                <string>href=\"/(dl\.php\?id=osx-([0-9]+(\.[0-9]+)+)-server&amp;version=([0-9]+(\.[0-9]+)+))\">Encode Server</string>
+                <key>url</key>
+                <string>https://dcpomatic.com/download</string>
+            </dict>
+            <key>Processor</key>
+            <string>URLTextSearcher</string>
+        </dict>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>filename</key>
+                <string>%NAME%.dmg</string>
+                <key>url</key>
+                <string>https://dcpomatic.com/%match%</string>
+            </dict>
+            <key>Processor</key>
+            <string>URLDownloader</string>
+        </dict>
+        
+        
         <dict>
             <key>Processor</key>
             <string>EndOfCheckPhase</string>
