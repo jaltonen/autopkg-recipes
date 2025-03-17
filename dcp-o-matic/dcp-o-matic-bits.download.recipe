@@ -8,6 +8,11 @@
     <string>com.github.jaltonen-recipes.download.DCP-o-matic 2 bits</string>
     <key>MinimumVersion</key>
     <string>1.1</string>
+    <key>Input</key>
+    <dict>
+        <key>NAME</key>
+        <string>DCP-o-matic2</string>
+    </dict>
     <key>Process</key>
     <array>
         <dict>
