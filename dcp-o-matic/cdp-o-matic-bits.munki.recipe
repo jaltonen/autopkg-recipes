@@ -83,8 +83,6 @@
             <key>Processor</key>
             <string>MunkiImporter</string>
         </dict>
-        
-        
         <dict>
             <key>Arguments</key>
             <dict>
@@ -95,9 +93,7 @@
             </dict>
             <key>Processor</key>
             <string>MunkiImporter</string>
-        </dict>
-        
-        
+        </dict>  
         <dict>
             <key>Arguments</key>
             <dict>
