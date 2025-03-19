@@ -3,15 +3,15 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Downloads the latest version of DCP-o-matic player.</string>
+    <string>Downloads the latest version of DCP-o-matic playlist editor.</string>
     <key>Identifier</key>
-    <string>com.github.jaltonen-recipes.download.DCP-o-matic-player</string>
+    <string>com.github.jaltonen-recipes.download.DCP-o-matic-playlist</string>
     <key>MinimumVersion</key>
     <string>1.1</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
-        <string>DCP-o-matic2-player</string>
+        <string>DCP-o-matic2-playlist</string>
     </dict>
     <key>Process</key>
     <array>
@@ -19,7 +19,7 @@
             <key>Arguments</key>
             <dict>
                 <key>re_pattern</key>
-                <string>href=\"/(dl\.php\?id=osx-([0-9]+(\.[0-9]+)+)-player&amp;version=([0-9]+(\.[0-9]+)+))\">Player</string>
+                <string>href=\"/(dl\.php\?id=osx-([0-9]+(\.[0-9]+)+)-player&amp;version=([0-9]+(\.[0-9]+)+))\">Playlist Editor</string>
                 <key>url</key>
                 <string>https://dcpomatic.com/download</string>
             </dict>
@@ -30,7 +30,7 @@
             <key>Arguments</key>
             <dict>
                 <key>filename</key>
-                <string>player.dmg</string>
+                <string>playlist.dmg</string>
                 <key>url</key>
                 <string>https://dcpomatic.com/%match%</string>
             </dict>
