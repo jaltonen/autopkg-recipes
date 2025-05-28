@@ -20,7 +20,8 @@
             <key>Arguments</key>
             <dict>
                 <key>re_pattern</key>
-                <string>href=\"/(dl\.php\?id=osx-([0-9]+(\.[0-9]+)+)-server&amp;version=([0-9]+(\.[0-9]+)+))\">Encode Server</string>
+                <!-- <string>href=\"/(dl\.php\?id=osx-([0-9]+(\.[0-9]+)+)-server&amp;version=([0-9]+(\.[0-9]+)+))\">Encode Server</string> -->
+                <string>href=\"/(dl?id=osx-([0-9]+(\.[0-9]+)+)-server&amp;version=([0-9]+(\.[0-9]+)+))\">Encode Server</string>
                 <key>url</key>
                 <string>https://dcpomatic.com/download</string>
             </dict>
