@@ -20,7 +20,8 @@
             <key>Arguments</key>
             <dict>
                 <key>re_pattern</key>
-                <string>href=\"/(dl\.php\?id=osx-([0-9]+(\.[0-9]+)+)-editor&amp;version=([0-9]+(\.[0-9]+)+))\">Editor</string>
+                <!-- <string>href=\"/(dl\.php\?id=osx-([0-9]+(\.[0-9]+)+)-editor&amp;version=([0-9]+(\.[0-9]+)+))\">Editor</string> -->
+                <string>href="/(dl\?id=osx-([0-9]+(\.[0-9]+)+)-editor&amp;version=([0-9]+(\.[0-9]+)+))">Editor</string>
                 <key>url</key>
                 <string>https://dcpomatic.com/download</string>
             </dict>
