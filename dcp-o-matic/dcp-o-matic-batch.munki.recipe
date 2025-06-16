@@ -31,7 +31,7 @@
     <key>MinimumVersion</key>
     <string>2.0.0</string>
     <key>ParentRecipe</key>
-	<string>com.github.jaltonen-recipes.download.DCP-o-matic 2 bits</string>
+	<string>com.github.jaltonen-recipes.download.DCP-o-matic-batch</string>
     <key>Process</key>
 	<array>
         <dict>

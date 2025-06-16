@@ -19,7 +19,8 @@
             <key>Arguments</key>
             <dict>
                 <key>re_pattern</key>
-                <string>href=\"/(dl\.php\?id=osx-([0-9]+(\.[0-9]+)+)-player&amp;version=([0-9]+(\.[0-9]+)+))\">Batch Converter</string>
+                <!-- <string>href=\"/(dl\.php\?id=osx-([0-9]+(\.[0-9]+)+)-batch&amp;version=([0-9]+(\.[0-9]+)+))\">Batch Converter</string> -->
+                <string>href="/(dl\?id=osx-([0-9]+(\.[0-9]+)+)-batch&amp;version=([0-9]+(\.[0-9]+)+))">Batch Converter</string>
                 <key>url</key>
                 <string>https://dcpomatic.com/download</string>
             </dict>
