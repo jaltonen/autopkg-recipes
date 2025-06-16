@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Comment</key>
+	<string></string>
+	<key>Description</key>
+	<string>Downloads the latest version of Reaper 7(including ReaMote).
+
+To download the Universal version use "universal" in the  DOWNLOAD_ARCH variable
+To download the legacy (10.5 - 10.14) Intel version use "x86_64" in the  DOWNLOAD_ARCH variable</string>
+	<key>Identifier</key>
+	<string>com.github.jwaltonen.download.Reaper</string>
+	<key>Input</key>
+	<dict>
+		<key>DOWNLOAD_URL</key>
+		<string>https://www.reaper.fm/download.php</string>
+		<key>DOWNLOAD_ARCH</key>
+		<string>universal</string>
+		<key>NAME</key>
+		<string>Reaper</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.6.1</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>url</key>
+				<string>%DOWNLOAD_URL%</string>
+				<key>re_pattern</key>
+				<string>files/7.x/reaper[0-9]+_%DOWNLOAD_ARCH%\.dmg</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>filename</key>
+				<string>%NAME%.dmg</string>
+				<key>url</key>
+				<string>https://www.reaper.fm/%match%</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>The download is verified using the Reaper signatures and it is assumed that this also verifies ReaMote.</string>
+			<key>Arguments</key>
+			<dict>
+				<key>input_path</key>
+				<string>%pathname%/REAPER.app</string>
+				<key>requirement</key>
+				<string>identifier "com.cockos.reaper" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = Y3T58622SG</string>
+			</dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>input_plist_path</key>
+				<string>%pathname%/Reaper.app/Contents/Info.plist</string>
+				<key>plist_version_key</key>
+				<string>CFBundleShortVersionString</string>
+			</dict>
+			<key>Processor</key>
+			<string>Versioner</string>
+		</dict>
+	</array>
+</dict>
+</plist>
