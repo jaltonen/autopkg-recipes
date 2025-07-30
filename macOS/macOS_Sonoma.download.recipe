@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN"
+   "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+
+  <!-- Unique identifier for your recipe -->
+  <key>Identifier</key>
+  <string>com.company.macos-sonoma-full-installer.download</string>
+
+  <!-- What this recipe does -->
+  <key>Description</key>
+  <string>Downloads the latest macOS Sonoma full installer (InstallAssistant.pkg) directly from Apple, as listed on MrMacintosh.com.</string>
+
+  <!-- User-configurable inputs -->
+  <key>Input</key>
+  <dict>
+    <!-- The page that lists all of the installer links -->
+    <key>search_url</key>
+    <string>https://mrmacintosh.com/macos-sonoma-full-installer-database-download-directly-from-apple/</string>
+
+    <!-- Regex to grab the first Apple-hosted “InstallAssistant.pkg” URL -->
+    <key>pkg_link_regex</key>
+    <string>https:\/\/swcdn\.apple\.com\/content\/downloads\/[0-9A-Z\-\.]+\/InstallAssistant\.pkg</string>
+  </dict>
+
+  <!-- The work to do: 1) scrape  2) download -->
+  <key>Process</key>
+  <array>
+
+    <!-- Step 1: Find the installer URL on the page -->
+    <dict>
+      <key>Processor</key>
+      <string>URLTextSearcher</string>
+      <key>Arguments</key>
+      <dict>
+        <key>url</key>
+        <string>%search_url%</string>
+        <key>re</key>
+        <string>%pkg_link_regex%</string>
+        <key>findall</key>
+        <false/>
+      </dict>
+    </dict>
+
+    <!-- Step 2: Download the pkg that was found -->
+    <dict>
+      <key>Processor</key>
+      <string>URLDownloader</string>
+      <key>Arguments</key>
+      <dict>
+        <!-- URLTextSearcher writes its match to RE_URL -->
+        <key>url</key>
+        <string>%RE_URL%</string>
+
+        <!-- Save into your local Autopkg cache -->
+        <key>download_path</key>
+        <string>%RECIPE_CACHE_DIR%</string>
+
+        <!-- Force the filename so it’s predictable -->
+        <key>filename</key>
+        <string>InstallAssistant_Sonoma.pkg</string>
+      </dict>
+    </dict>
+
+  </array>
+
+  <!-- Expose useful output variables -->
+  <key>Output</key>
+  <dict>
+    <key>url</key>
+    <string>%RE_URL%</string>
+    <key>download_path</key>
+    <string>%RECIPE_CACHE_DIR%/InstallAssistant_Sonoma.pkg</string>
+  </dict>
+
+</dict>
+</plist>
