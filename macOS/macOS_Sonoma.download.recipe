@@ -5,23 +5,26 @@
 <dict>
 
   <key>Identifier</key>
-   <string>com.github.jaltonen-recipes.macos-sonoma-full-installer.download</string>
+  <string>com.github.jaltonen-recipes.macos-sonoma-full-installer.download</string>
 
   <key>Description</key>
-  <string>Downloads the latest macOS Sonoma full installer directly from Apple as listed on MrMacintosh.com.</string>
+  <string>Downloads the latest macOS Sonoma full InstallAssistant.pkg directly from Apple, as listed on MrMacintosh.com.</string>
 
   <key>Input</key>
   <dict>
+    <!-- Page that lists all the Apple‐hosted installers -->
     <key>search_url</key>
     <string>https://mrmacintosh.com/macos-sonoma-full-installer-database-download-directly-from-apple/</string>
+
+    <!-- We look for an href="https://…InstallAssistant.pkg" link -->
     <key>pkg_link_regex</key>
-    <string>https:\/\/swcdn\.apple\.com\/content\/downloads\/[0-9A-Z\-\.]+\/InstallAssistant\.pkg</string>
+    <string>href="(https://swcdn\.apple\.com/[^"]+/InstallAssistant\.pkg)"</string>
   </dict>
 
   <key>Process</key>
   <array>
 
-    <!-- Scrape the page for the Apple CDN URL -->
+    <!-- 1) Scrape the page for the pkg link -->
     <dict>
       <key>Processor</key>
       <string>URLTextSearcher</string>
@@ -29,6 +32,14 @@
       <dict>
         <key>url</key>
         <string>%search_url%</string>
+
+        <!-- fake a real‐world browser to avoid blocks -->
+        <key>headers</key>
+        <dict>
+          <key>User-Agent</key>
+          <string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Safari/605.1.15</string>
+        </dict>
+
         <key>re_pattern</key>
         <string>%pkg_link_regex%</string>
         <key>findall</key>
@@ -36,16 +47,21 @@
       </dict>
     </dict>
 
-    <!-- Download the found PKG -->
+    <!-- 2) Download that pkg -->
     <dict>
       <key>Processor</key>
       <string>URLDownloader</string>
       <key>Arguments</key>
       <dict>
+        <!-- URLTextSearcher writes the first capture group into RE_MATCH -->
         <key>url</key>
-        <string>%RE_URL%</string>
+        <string>%RE_MATCH%</string>
+
+        <!-- into your Autopkg cache -->
         <key>download_path</key>
         <string>%RECIPE_CACHE_DIR%</string>
+
+        <!-- and call it something predictable -->
         <key>filename</key>
         <string>InstallAssistant_Sonoma.pkg</string>
       </dict>
@@ -56,7 +72,7 @@
   <key>Output</key>
   <dict>
     <key>url</key>
-    <string>%RE_URL%</string>
+    <string>%RE_MATCH%</string>
     <key>download_path</key>
     <string>%RECIPE_CACHE_DIR%/InstallAssistant_Sonoma.pkg</string>
   </dict>
