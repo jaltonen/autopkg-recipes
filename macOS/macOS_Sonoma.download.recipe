@@ -51,20 +51,7 @@
     <dict>
       <key>Processor</key>
       <string>URLDownloader</string>
-      <key>Arguments</key>
-      <dict>
-        <!-- URLTextSearcher writes the first capture group into RE_MATCH -->
-        <key>url</key>
-        <string>%RE_MATCH%</string>
-
-        <!-- into your Autopkg cache -->
-        <key>download_path</key>
-        <string>%RECIPE_CACHE_DIR%</string>
-
-        <!-- and call it something predictable -->
-        <key>filename</key>
-        <string>InstallAssistant_Sonoma.pkg</string>
-      </dict>
+      
     </dict>
 
   </array>
