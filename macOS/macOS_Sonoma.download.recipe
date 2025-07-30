@@ -6,7 +6,7 @@
 
   <!-- Unique identifier for your recipe -->
   <key>Identifier</key>
-  <string>com.company.macos-sonoma-full-installer.download</string>
+  <string>com.github.jaltonen-recipes.macos-sonoma-full-installer.download</string>
 
   <!-- What this recipe does -->
   <key>Description</key>
