@@ -18,7 +18,7 @@
 
     <!-- We look for an href="https://…InstallAssistant.pkg" link -->
     <key>pkg_link_regex</key>
-    <string>(?<=href=")(https://swcdn\.apple\.com/[^"]+/InstallAssistant\.pkg)(?=")</string>
+    <string>href="(https://swcdn\.apple\.com/content/downloads/[^"]*/InstallAssistant\.pkg)"</string>
   </dict>
 
   <key>Process</key>
