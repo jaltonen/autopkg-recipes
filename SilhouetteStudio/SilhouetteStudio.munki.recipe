@@ -6,7 +6,7 @@
     <key>Description</key>
     <string>Download the latest version of Silhouette Studio and imports it into Munki.</string>
     <key>Identifier</key>
-    <string>com.github.jaltonen.munki.silhouettestudio</string>
+    <string>com.github.jaltonen.munki.SilhouetteStudio</string>
     <key>Input</key>
     <dict>
         <key>MUNKI_REPO_SUBDIR</key>
