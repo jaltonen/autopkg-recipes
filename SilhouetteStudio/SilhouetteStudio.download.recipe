@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Downloads the latest version of Silhouette Studio.</string>
 	<key>Identifier</key>
-	<string>com.github.ahousseini-recipes.download.SilhouetteStudio</string>
+	<string>com.github.jaltonen.download.SilhouetteStudio</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
