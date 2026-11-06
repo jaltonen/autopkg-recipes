@@ -19,7 +19,7 @@ Notably, REG_COUNTRY must contain sane values:
         <!-- Version 14 updates _may_ contain 'Update' in the title, but
         we also want to avoid capturing the 'Studio Update' versions -->
         <key>PRODUCT_NAME_PATTERN</key>
-        <string>^DaVinci Resolve Studio (?P&lt;version&gt;18(\.\d+)*)( Update)*$</string>
+        <string>^DaVinci Resolve Studio (?P&lt;version&gt;20(\.\d+)*)( Update)*$</string>
         <key>NAME</key>
         <string>DaVinciResolveStudio18</string>
         <key>REG_FIRSTNAME</key>

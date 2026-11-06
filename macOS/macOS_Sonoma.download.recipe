@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN"
+   "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+
+  <key>Identifier</key>
+  <string>com.github.jaltonen-recipes.macos-sonoma-full-installer.download</string>
+
+  <key>Description</key>
+  <string>Downloads the latest macOS Sonoma full InstallAssistant.pkg directly from Apple, as listed on MrMacintosh.com.</string>
+
+  <key>Input</key>
+  <dict>
+    <!-- Page that lists all the Apple‐hosted installers -->
+    <key>search_url</key>
+    <string>https://mrmacintosh.com/macos-sonoma-full-installer-database-download-directly-from-apple/</string>
+
+    <!-- We look for an href="https://…InstallAssistant.pkg" link -->
+    <key>pkg_link_regex</key>
+    <string>href="(https://swcdn\.apple\.com/content/downloads/[^"]*/InstallAssistant\.pkg)"</string>
+  </dict>
+
+  <key>Process</key>
+  <array>
+
+    <!-- 1) Scrape the page for the pkg link -->
+    <dict>
+      <key>Processor</key>
+      <string>URLTextSearcher</string>
+      <key>Arguments</key>
+      <dict>
+        <key>url</key>
+        <string>%search_url%</string>
+
+        <!-- fake a real‐world browser to avoid blocks -->
+        <key>headers</key>
+        <dict>
+          <key>User-Agent</key>
+          <string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Safari/605.1.15</string>
+        </dict>
+
+        <key>re_pattern</key>
+        <string>%pkg_link_regex%</string>
+        <key>findall</key>
+        <false/>
+      </dict>
+    </dict>
+
+    <!-- 2) Download that pkg -->
+    <dict>
+      <key>Processor</key>
+      <string>CURLDownloader</string>
+      
+    </dict>
+
+  </array>
+
+  <key>Output</key>
+  <dict>
+    <key>url</key>
+    <string>%RE_MATCH%</string>
+    <key>download_path</key>
+    <string>%RECIPE_CACHE_DIR%/InstallAssistant_Sonoma.pkg</string>
+  </dict>
+
+</dict>
+</plist>
