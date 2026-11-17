@@ -1,0 +1,28 @@
+Description: Downloads the latest version of Orchestral Tools SINEplayer for macOS.
+Identifier: com.github.yourusername.download.SINEplayer
+Input:
+  NAME: SINEplayer
+  SEARCH_URL: https://orchestraltools.com
+  SEARCH_PATTERN: (?P<url>https://orchtools-installers-dl\.s3\.eu-central-1\.amazonaws\.com/SINE_Player_[^"']+\.pkg)
+MinimumVersion: "2.3"
+
+Process:
+  - Processor: URLTextSearcher
+    Arguments:
+      re_pattern: "%SEARCH_PATTERN%"
+      url: "%SEARCH_URL%"
+
+  - Processor: URLDownloader
+    Arguments:
+      filename: "%NAME%.pkg"
+      url: "%url%"
+
+  - Processor: EndOfCheckPhase
+
+  - Processor: CodeSignatureVerifier
+    Arguments:
+      expected_authority_names:
+        - "Developer ID Installer: Schwarzer & Mantik GmbH (77FWFTVCD5)"
+        - "Developer ID Certification Authority"
+        - "Apple Root CA"
+      input_path: "%pathname%"
