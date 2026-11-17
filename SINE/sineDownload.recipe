@@ -13,7 +13,7 @@
 		<key>SEARCH_PATTERN</key>
 		<string>(?P&lt;url&gt;https://orchtools-installers-dl\.s3\.eu-central-1\.amazonaws\.com/SINE_Player_[^"']+\.pkg)</string>
 		<key>SEARCH_URL</key>
-		<string>https://orchestraltools.com</string>
+		<string>https://orchestraltools.com/get-sine</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
