@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Downloads the latest version of Orchestral Tools SINEplayer for macOS.</string>
 	<key>Identifier</key>
-	<string>com.github.yourusername.download.SINEplayer</string>
+	<string>com.github.jaltonen.download.SINEplayer</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
