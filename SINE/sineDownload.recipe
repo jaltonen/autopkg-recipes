@@ -1,28 +1,65 @@
-Description: Downloads the latest version of Orchestral Tools SINEplayer for macOS.
-Identifier: com.github.yourusername.download.SINEplayer
-Input:
-  NAME: SINEplayer
-  SEARCH_URL: https://orchestraltools.com
-  SEARCH_PATTERN: (?P<url>https://orchtools-installers-dl\.s3\.eu-central-1\.amazonaws\.com/SINE_Player_[^"']+\.pkg)
-MinimumVersion: "2.3"
-
-Process:
-  - Processor: URLTextSearcher
-    Arguments:
-      re_pattern: "%SEARCH_PATTERN%"
-      url: "%SEARCH_URL%"
-
-  - Processor: URLDownloader
-    Arguments:
-      filename: "%NAME%.pkg"
-      url: "%url%"
-
-  - Processor: EndOfCheckPhase
-
-  - Processor: CodeSignatureVerifier
-    Arguments:
-      expected_authority_names:
-        - "Developer ID Installer: Schwarzer & Mantik GmbH (77FWFTVCD5)"
-        - "Developer ID Certification Authority"
-        - "Apple Root CA"
-      input_path: "%pathname%"
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://apple.com">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest version of Orchestral Tools SINEplayer for macOS.</string>
+	<key>Identifier</key>
+	<string>com.github.yourusername.download.SINEplayer</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>SINEplayer</string>
+		<key>SEARCH_PATTERN</key>
+		<string>(?P&lt;url&gt;https://orchtools-installers-dl\.s3\.eu-central-1\.amazonaws\.com/SINE_Player_[^"']+\.pkg)</string>
+		<key>SEARCH_URL</key>
+		<string>https://orchestraltools.com</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>1.0.0</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>re_pattern</key>
+				<string>%SEARCH_PATTERN%</string>
+				<key>url</key>
+				<string>%SEARCH_URL%</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>filename</key>
+				<string>%NAME%.pkg</string>
+				<key>url</key>
+				<string>%url%</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>expected_authority_names</key>
+				<array>
+					<string>Developer ID Installer: Schwarzer &amp; Mantik GmbH (77FWFTVCD5)</string>
+					<string>Developer ID Certification Authority</string>
+					<string>Apple Root CA</string>
+				</array>
+				<key>input_path</key>
+				<string>%pathname%</string>
+			</dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
+		</dict>
+	</array>
+</dict>
+</plist>
